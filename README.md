@@ -2,4 +2,4 @@
 
 ## Description:
 
-A Nysa platform for demoulating designs
+A Nysa platform for demoing designs
