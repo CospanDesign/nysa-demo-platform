@@ -61,7 +61,10 @@ class DemoPlatform(Platform):
             NysaError: An error occured when scanning for devices
 
         """
-        raise AssertionError("%s not implemented" % sys._getframe().f_code.co_name)
+        inst_dict = {}
+        if self.status: self.status.Warning("Scan function not implemented yet!")
+        return inst_dict
+        #raise AssertionError("%s not implemented" % sys._getframe().f_code.co_name)
 
     def test_build_tools(self):
         """
@@ -87,3 +90,37 @@ class DemoPlatform(Platform):
             return False
         return True
         '''
+
+    def setup_platform(self):
+        """
+        Run this to configure the system to recognize your platform, such as:
+            -installing drivers
+            -assigning PCIE express ports
+            -etc
+
+        Args:
+            Nothing
+
+        Return:
+            Nothing
+
+        Raises:
+            Nothing
+        """
+        if self.status: self.status.Warning("Setup Function Not Implemented Yet!")
+
+    def uninstall_platform(self):
+        """
+        Run this to uninstall your platform from the system
+
+        Args:
+            Nothing
+
+        Return:
+            Nothing
+
+        Raises:
+            Nothing
+        """
+        if self.status: self.status.Warning("Uninstall Function Not Implemented Yet!")
+
