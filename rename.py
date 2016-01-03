@@ -76,8 +76,6 @@ def recursive_find_replace(top_dir, from_name, to_name):
 
             find_replace_in_file(os.path.join(root, name), from_name, to_name)
 
-
-
 def rename_board(name_platform, debug = False):
     base_name = os.path.basename(name_platform)
     name = name_platform.partition("nysa-")[2]
@@ -90,8 +88,9 @@ def rename_board(name_platform, debug = False):
     default_display_name = DEMO_NAME.capitalize()
     print "New Name: %s" % name
 
-    shutil.move(DEMO_NAME, name)
-    recursive_find_replace(name_platform, DEMO_NAME, name)
+    board_name = name.replace("-", "_")
+    shutil.move(DEMO_NAME, board_name)
+    recursive_find_replace(name_platform, DEMO_NAME, board_name)
     print "Board name will be: %s" % display_name
 
     recursive_find_replace(name_platform, default_display_name, display_name)
