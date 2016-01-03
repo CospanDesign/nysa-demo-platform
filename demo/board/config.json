@@ -10,6 +10,7 @@
     "image":"",
     "default_project":"",
     "invert_reset":false,
+    "clockrate":50000000,
     "build_flags":{
     }
 }
